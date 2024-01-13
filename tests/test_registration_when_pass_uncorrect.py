@@ -1,13 +1,12 @@
-from selenium import webdriver
+
 
 from constants import Constants
 from locators import Locators
 
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
-class Test:
-    def test_registration_new_user_when_pass_uncorrected(self, generation_email):
+
+class TestRegistrationWhenPassUncorrect:
+    def test_registration_new_user_when_pass_uncorrected(self, generation_email, driver):
         driver.find_element(*Locators.BUTTON_SIGNIN_ACC).click()
         driver.find_element(*Locators.BUTTON_OF_REGISTRATION).click()
 
@@ -19,4 +18,3 @@ class Test:
 
         assert driver.find_element(*Locators.ERROR_UNCORRECTED_PASSWORD).text == 'Некорректный пароль'
 
-        driver.quit()

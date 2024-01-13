@@ -6,11 +6,9 @@ from constants import Constants
 from locators import Locators
 
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
 
-class Test:
-    def test_signin_button_voyti_v_account(self):
+class TestSigninButtonSigninInAcc:
+    def test_signin_button_voyti_v_account(self, driver):
         driver.find_element(*Locators.BUTTON_SIGNIN_ACC).click()
 
         driver.find_element(*Locators.EMAIL_INPUT).send_keys(Constants.EMAIL)
@@ -29,4 +27,3 @@ class Test:
         assert value == 'test998@bk.ru'
 
 
-        driver.quit()

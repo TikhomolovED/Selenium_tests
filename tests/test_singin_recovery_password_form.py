@@ -1,15 +1,13 @@
-from selenium import webdriver
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 from constants import Constants
 from locators import Locators
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
 
-class Test:
-    def test_singin_recovery_password_form(self):
+class TestSigninFromRecoveryPass:
+    def test_singin_recovery_password_form(self, driver):
         driver.find_element(*Locators.BUTTON_SIGNIN_ACC).click()
         driver.find_element(*Locators.BUTTON_PASSWORD_RECOVERY).click()
         driver.find_element(*Locators.BUTTON_SIGNIN_PASS_RECOVERY).click()
@@ -29,5 +27,3 @@ class Test:
         value = driver.find_element(*Locators.EMAIL_INPUT_ON_PROFILE).get_attribute('value')
 
         assert value == 'test998@bk.ru'
-
-        driver.quit()

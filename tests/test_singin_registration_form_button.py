@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -6,11 +6,9 @@ from constants import Constants
 from locators import Locators
 
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
 
-class Test:
-    def test_singin_registration_form_button(self):
+class TestSigninRegistrationFrom:
+    def test_singin_registration_form_button(self, driver):
         driver.find_element(*Locators.BUTTON_SIGNIN_ACC).click()
         driver.find_element(*Locators.BUTTON_OF_REGISTRATION).click()
         driver.find_element(*Locators.BUTTON_SIGNIN_REG_FORM).click()
@@ -31,5 +29,4 @@ class Test:
 
         assert value == 'test998@bk.ru'
 
-        driver.quit()
 

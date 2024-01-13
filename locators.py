@@ -7,6 +7,9 @@ class Locators:
     FILLINGS = (By.XPATH, '//span[contains(text(),"Начинки")]') #Кнопка "Начинки"
     FILLING_FIRST_ELEMENT = (By.XPATH,"//p[contains(text(),'Мясо бессмертных моллюсков Protostomia')]") #первый элемент начинок
     BUNS = (By.XPATH, '//span[contains(text(),"Булки")]') #кнопка "Булки"
+    BUNS_TAB = (By.XPATH, '//body/div[@id="root"]/div[1]/main[1]/section[1]/div[1]/div[1]') #изменение класса при выбранных булках
+    FILLINGS_TAB = (By.XPATH, '//body/div[@id="root"]/div[1]/main[1]/section[1]/div[1]/div[3]') #изменение класса при выбранных начинках
+    SAUSES_TAB =(By.XPATH, '//body/div[@id="root"]/div[1]/main[1]/section[1]/div[1]/div[2]') # изменение класса при выбранных соусах
     BUNS_FIRST_ELEMENT = (By.XPATH, '//p[contains(text(),"Флюоресцентная булка R2-D3")]') #первый элемент в булках
     BUTTON_SIGNIN_ACC = ((By.XPATH,
     '//button[@class = "button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg"]')) # Кнопка "Войти в аккаунт"
@@ -15,6 +18,7 @@ class Locators:
     BUTTON_SAUСES = (By.XPATH, '//span[contains(text(),"Соусы")]') #Кнопка "Соусы"
     THIRD_ELEMENT_IN_SAUCES = (By.XPATH,"//p[contains(text(),'Соус традиционный галактический')]") # 3ий элемент в соусах
     HEADER_STELLAR_BURGERS = (By.XPATH, '//header/nav[1]/div[1]/a[1]/*[1]') # "Stellar burgers" в хеддере
+    CONSTRUCTOR_SELECTED = (By.XPATH, '//a[@class = "AppHeader_header__link__3D_hX AppHeader_header__link_active__1IkJo"]') #конструктор выбран
 
     #https://stellarburgers.nomoreparties.site/login
     EMAIL_INPUT = (By.XPATH, '//input[@name = "name"]') #Поле Email
@@ -30,6 +34,7 @@ class Locators:
     BUTTON_CONSTRUCTOR = (By.XPATH, '//li/a[@href="/"]') #кнопка "Конструктор"
     BUTTON_QUIT_FROM_PROFILE = (By.XPATH, '//button[contains(text(),"Выход")]') #Кнопка "Выход"
     EMAIL_INPUT_ON_PROFILE = (By.XPATH, '//input[@value="test998@bk.ru"]')
+    EMAIL_INPUT_ON_PROFILE_NOT_CONST = (By.XPATH, '//body/div[@id="root"]/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/input[1]')
 
     #https://stellarburgers.nomoreparties.site/register
     NAME_INPUT_REG = (By.XPATH, '//input[@name = "name"]') #Поле "Имя"

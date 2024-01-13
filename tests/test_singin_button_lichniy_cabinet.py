@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -6,11 +6,9 @@ from constants import Constants
 from locators import Locators
 
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
 
-class Test:
-    def test_singin_button_lichniy_cabinet(self):
+class TestSigninButtonPersonalArea:
+    def test_singin_button_lichniy_cabinet(self, driver):
         driver.find_element(*Locators.HEADER_PROFILE).click()
 
         driver.find_element(*Locators.EMAIL_INPUT).send_keys(Constants.EMAIL)
@@ -29,6 +27,5 @@ class Test:
 
         assert value == 'test998@bk.ru'
 
-        driver.quit()
 
 

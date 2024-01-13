@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -6,11 +6,9 @@ from constants import Constants
 from locators import Locators
 
 
-driver = webdriver.Chrome()
-driver.get(Constants.URL)
 
-class Test:
-    def test_quit_from_account(self):
+class TestQuitFromAcc:
+    def test_quit_from_account(self, driver):
         driver.find_element(*Locators.BUTTON_SIGNIN_ACC).click()
 
         driver.find_element(*Locators.EMAIL_INPUT).send_keys(Constants.EMAIL)
@@ -29,4 +27,3 @@ class Test:
             Locators.PASSWORD_INPUT))
 
         assert driver.current_url== 'https://stellarburgers.nomoreparties.site/login'
-        driver.quit()
